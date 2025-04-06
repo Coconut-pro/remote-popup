@@ -1,77 +1,18 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>现代化弹窗</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .popup {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            max-width: 90%;
-            width: 400px;
-        }
-        .popup-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .popup-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .popup-close {
-            cursor: pointer;
-            font-size: 1.5rem;
-        }
-        .popup-content {
-            margin-bottom: 20px;
-        }
-        .popup-footer {
-            display: flex;
-            justify-content: flex-end;
-        }
-        .btn {
-            margin-left: 10px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="popup.css">
+  <title>动态弹窗</title>
 </head>
 <body>
-    <div class="popup">
-        <div class="popup-header">
-            <div class="popup-title">欢迎体验</div>
-            <div class="popup-close">&times;</div>
-        </div>
-        <div class="popup-content">
-            <p>开发者是一名GUAT的不知名大学生，非计算机专业，有做的不好的地方欢迎反馈。</p>
-        </div>
-        <div class="popup-footer">
-            <button class="btn btn-secondary">取消</button>
-            <button class="btn btn-primary">确认</button>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // 关闭弹窗
-        document.querySelector('.popup-close').addEventListener('click', function() {
-            window.parent.postMessage('closePopup', '*');
-        });
-        // 确认按钮
-        document.querySelector('.btn-primary').addEventListener('click', function() {
-            window.parent.postMessage('confirmPopup', '*');
-        });
-        // 取消按钮
-        document.querySelector('.btn-secondary').addEventListener('click', function() {
-            window.parent.postMessage('cancelPopup', '*');
-        });
-    </script>
+  <div class="popup-container">
+    <img class="banner" src="https://via.placeholder.com/300x150" alt="Banner">
+    <h1>欢迎新用户！</h1>
+    <p>点击下方按钮领取奖励。</p>
+    <button id="actionBtn">立即领取</button>
+  </div>
+  <script src="popup.js"></script>
 </body>
 </html>
