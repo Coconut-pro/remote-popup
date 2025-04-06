@@ -3,15 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="popup.css">
-  <title>动态弹窗</title>
+  <title>欢迎弹窗</title>
+  <style>
+    html, body {
+      background-color: transparent;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Roboto", "Helvetica Neue", sans-serif;
+    }
+
+    .popup-container {
+      background-color: #ffffff;
+      border-radius: 20px;
+      padding: 24px 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+      width: 90%;
+      max-width: 320px;
+      text-align: center;
+      animation: fadeInUp 0.4s ease-out;
+    }
+
+    .popup-container h1 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: #222;
+    }
+
+    .popup-container p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    #actionBtn {
+      background: linear-gradient(135deg, #3F51B5, #2196F3);
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 999px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    #actionBtn:hover {
+      background: linear-gradient(135deg, #5C6BC0, #42A5F5);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="popup-container">
-    <h1>欢迎新用户！</h1>
-    <p>点击下方按钮领取奖励。</p>
+    <h1>🎉 欢迎新用户</h1>
+    <p>点击下方按钮领取奖励</p>
     <button id="actionBtn">立即领取</button>
   </div>
-  <script src="popup.js"></script>
+
+  <script>
+    document.getElementById("actionBtn").addEventListener("click", () => {
+      if (window.Android && Android.postAction) {
+        Android.postAction("close");
+      }
+    });
+  </script>
 </body>
 </html>
+
