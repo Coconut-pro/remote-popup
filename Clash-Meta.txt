@@ -1,4 +1,4 @@
-port: 7890
+port: 8443
 allow-lan: true
 mode: rule
 log-level: info
