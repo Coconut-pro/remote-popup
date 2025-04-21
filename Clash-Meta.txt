@@ -1,0 +1,269 @@
+port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+unified-delay: true
+global-client-fingerprint: chrome
+dns:
+  enable: false
+  listen: :53
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver: 
+    - 223.5.5.5
+    - 114.114.114.114
+    - 8.8.8.8
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  fallback:
+    - https://1.0.0.1/dns-query
+    - tls://dns.google
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+
+proxies:
+- name: CF_V1_www.visa.com_80
+  type: vless
+  server: www.visa.com
+  port: 80
+  uuid: 5802a12b-7daf-4d85-841a-2f32cbb886fd
+  udp: false
+  tls: false
+  network: ws
+  ws-opts:
+    path: "/?ed=2560"
+    headers:
+      Host: vless2.3365427906.workers.dev
+
+- name: CF_V2_cis.visa.com_8080
+  type: vless
+  server: cis.visa.com
+  port: 8080
+  uuid: 5802a12b-7daf-4d85-841a-2f32cbb886fd
+  udp: false
+  tls: false
+  network: ws
+  ws-opts:
+    path: "/?ed=2560"
+    headers:
+      Host: vless2.3365427906.workers.dev
+
+- name: CF_V3_africa.visa.com_8880
+  type: vless
+  server: africa.visa.com
+  port: 8880
+  uuid: 5802a12b-7daf-4d85-841a-2f32cbb886fd
+  udp: false
+  tls: false
+  network: ws
+  ws-opts:
+    path: "/?ed=2560"
+    headers:
+      Host: vless2.3365427906.workers.dev
+
+- name: CF_V4_www.visa.com.sg_2052
+  type: vless
+  server: www.visa.com.sg
+  port: 2052
+  uuid: 5802a12b-7daf-4d85-841a-2f32cbb886fd
+  udp: false
+  tls: false
+  network: ws
+  ws-opts:
+    path: "/?ed=2560"
+    headers:
+      Host: vless2.3365427906.workers.dev
+
+- name: CF_V5_www.visaeurope.at_2082
+  type: vless
+  server: www.visaeurope.at
+  port: 2082
+  uuid: 5802a12b-7daf-4d85-841a-2f32cbb886fd
+  udp: false
+  tls: false
+  network: ws
+  ws-opts:
+    path: "/?ed=2560"
+    headers:
+      Host: vless2.3365427906.workers.dev
+
+- name: CF_V6_www.visa.com.mt_2086
+  type: vless
+  server: www.visa.com.mt
+  port: 2086
+  uuid: 5802a12b-7daf-4d85-841a-2f32cbb886fd
+  udp: false
+  tls: false
+  network: ws
+  ws-opts:
+    path: "/?ed=2560"
+    headers:
+      Host: vless2.3365427906.workers.dev
+
+- name: CF_V7_qa.visamiddleeast.com_2095
+  type: vless
+  server: qa.visamiddleeast.com
+  port: 2095
+  uuid: 5802a12b-7daf-4d85-841a-2f32cbb886fd
+  udp: false
+  tls: false
+  network: ws
+  servername: vless2.3365427906.workers.dev
+  ws-opts:
+    path: "/?ed=2560"
+    headers:
+      Host: vless2.3365427906.workers.dev
+
+- name: CF_V8_usa.visa.com_443
+  type: vless
+  server: usa.visa.com
+  port: 443
+  uuid: 5802a12b-7daf-4d85-841a-2f32cbb886fd
+  udp: false
+  tls: true
+  network: ws
+  servername: vless2.3365427906.workers.dev
+  ws-opts:
+    path: "/?ed=2560"
+    headers:
+      Host: vless2.3365427906.workers.dev
+
+- name: CF_V9_myanmar.visa.com_8443
+  type: vless
+  server: myanmar.visa.com
+  port: 8443
+  uuid: 5802a12b-7daf-4d85-841a-2f32cbb886fd
+  udp: false
+  tls: true
+  network: ws
+  servername: vless2.3365427906.workers.dev
+  ws-opts:
+    path: "/?ed=2560"
+    headers:
+      Host: vless2.3365427906.workers.dev
+
+- name: CF_V10_www.visa.com.tw_2053
+  type: vless
+  server: www.visa.com.tw
+  port: 2053
+  uuid: 5802a12b-7daf-4d85-841a-2f32cbb886fd
+  udp: false
+  tls: true
+  network: ws
+  servername: vless2.3365427906.workers.dev
+  ws-opts:
+    path: "/?ed=2560"
+    headers:
+      Host: vless2.3365427906.workers.dev
+
+- name: CF_V11_www.visaeurope.ch_2083
+  type: vless
+  server: www.visaeurope.ch
+  port: 2083
+  uuid: 5802a12b-7daf-4d85-841a-2f32cbb886fd
+  udp: false
+  tls: true
+  network: ws
+  servername: vless2.3365427906.workers.dev
+  ws-opts:
+    path: "/?ed=2560"
+    headers:
+      Host: vless2.3365427906.workers.dev
+
+- name: CF_V12_www.visa.com.br_2087
+  type: vless
+  server: www.visa.com.br
+  port: 2087
+  uuid: 5802a12b-7daf-4d85-841a-2f32cbb886fd
+  udp: false
+  tls: true
+  network: ws
+  servername: vless2.3365427906.workers.dev
+  ws-opts:
+    path: "/?ed=2560"
+    headers:
+      Host: vless2.3365427906.workers.dev
+
+- name: CF_V13_www.visasoutheasteurope.com_2096
+  type: vless
+  server: www.visasoutheasteurope.com
+  port: 2096
+  uuid: 5802a12b-7daf-4d85-841a-2f32cbb886fd
+  udp: false
+  tls: true
+  network: ws
+  servername: vless2.3365427906.workers.dev
+  ws-opts:
+    path: "/?ed=2560"
+    headers:
+      Host: vless2.3365427906.workers.dev
+
+proxy-groups:
+- name: 负载均衡
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  proxies:
+    - CF_V1_www.visa.com_80
+    - CF_V2_cis.visa.com_8080
+    - CF_V3_africa.visa.com_8880
+    - CF_V4_www.visa.com.sg_2052
+    - CF_V5_www.visaeurope.at_2082
+    - CF_V6_www.visa.com.mt_2086
+    - CF_V7_qa.visamiddleeast.com_2095
+    - CF_V8_usa.visa.com_443
+    - CF_V9_myanmar.visa.com_8443
+    - CF_V10_www.visa.com.tw_2053
+    - CF_V11_www.visaeurope.ch_2083
+    - CF_V12_www.visa.com.br_2087
+    - CF_V13_www.visasoutheasteurope.com_2096
+
+- name: 自动选择
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+    - CF_V1_www.visa.com_80
+    - CF_V2_cis.visa.com_8080
+    - CF_V3_africa.visa.com_8880
+    - CF_V4_www.visa.com.sg_2052
+    - CF_V5_www.visaeurope.at_2082
+    - CF_V6_www.visa.com.mt_2086
+    - CF_V7_qa.visamiddleeast.com_2095
+    - CF_V8_usa.visa.com_443
+    - CF_V9_myanmar.visa.com_8443
+    - CF_V10_www.visa.com.tw_2053
+    - CF_V11_www.visaeurope.ch_2083
+    - CF_V12_www.visa.com.br_2087
+    - CF_V13_www.visasoutheasteurope.com_2096
+
+- name: 🌍选择代理
+  type: select
+  proxies:
+    - 负载均衡
+    - 自动选择
+    - DIRECT
+    - CF_V1_www.visa.com_80
+    - CF_V2_cis.visa.com_8080
+    - CF_V3_africa.visa.com_8880
+    - CF_V4_www.visa.com.sg_2052
+    - CF_V5_www.visaeurope.at_2082
+    - CF_V6_www.visa.com.mt_2086
+    - CF_V7_qa.visamiddleeast.com_2095
+    - CF_V8_usa.visa.com_443
+    - CF_V9_myanmar.visa.com_8443
+    - CF_V10_www.visa.com.tw_2053
+    - CF_V11_www.visaeurope.ch_2083
+    - CF_V12_www.visa.com.br_2087
+    - CF_V13_www.visasoutheasteurope.com_2096
+
+rules:
+  - GEOIP,LAN,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,🌍选择代理
